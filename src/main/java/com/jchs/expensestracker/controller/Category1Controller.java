@@ -1,4 +1,4 @@
-package com.pj.expensestracker.controller;
+package com.jchs.expensestracker.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 
-import com.pj.expensestracker.Parameter;
-import com.pj.expensestracker.gui.ShowDialog;
-import com.pj.expensestracker.model.Category1;
-import com.pj.expensestracker.service.CategoryService;
+import com.jchs.expensestracker.Parameter;
+import com.jchs.expensestracker.gui.ShowDialog;
+import com.jchs.expensestracker.model.Category1;
+import com.jchs.expensestracker.service.CategoryService;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

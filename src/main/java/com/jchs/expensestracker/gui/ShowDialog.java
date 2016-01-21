@@ -1,4 +1,4 @@
-package com.pj.expensestracker.gui;
+package com.jchs.expensestracker.gui;
 
 import java.util.Optional;
 

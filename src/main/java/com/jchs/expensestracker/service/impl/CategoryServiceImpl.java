@@ -1,4 +1,4 @@
-package com.pj.expensestracker.service.impl;
+package com.jchs.expensestracker.service.impl;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pj.expensestracker.model.Category1;
-import com.pj.expensestracker.repository.Category1Repository;
-import com.pj.expensestracker.service.CategoryService;
+import com.jchs.expensestracker.model.Category1;
+import com.jchs.expensestracker.repository.Category1Repository;
+import com.jchs.expensestracker.service.CategoryService;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {

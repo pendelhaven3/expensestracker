@@ -1,9 +1,9 @@
-package com.pj.expensestracker.gui.component;
+package com.jchs.expensestracker.gui.component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import com.pj.expensestracker.Constants;
+import com.jchs.expensestracker.Constants;
 
 import javafx.scene.control.DatePicker;
 import javafx.util.StringConverter;

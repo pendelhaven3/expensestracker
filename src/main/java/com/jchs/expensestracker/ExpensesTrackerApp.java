@@ -1,4 +1,4 @@
-package com.pj.expensestracker;
+package com.jchs.expensestracker;
 
 import java.sql.SQLException;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 
-import com.pj.expensestracker.controller.StageController;
-import com.pj.expensestracker.gui.ShowDialog;
+import com.jchs.expensestracker.controller.StageController;
+import com.jchs.expensestracker.gui.ShowDialog;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

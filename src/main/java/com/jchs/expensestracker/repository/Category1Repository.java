@@ -1,11 +1,11 @@
-package com.pj.expensestracker.repository;
+package com.jchs.expensestracker.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.pj.expensestracker.model.Category1;
+import com.jchs.expensestracker.model.Category1;
 
 public interface Category1Repository extends JpaRepository<Category1, Long> {
 

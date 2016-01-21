@@ -1,4 +1,4 @@
-package com.pj.expensestracker;
+package com.jchs.expensestracker;
 
 import java.util.Map;
 

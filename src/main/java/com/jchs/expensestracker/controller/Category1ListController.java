@@ -1,11 +1,11 @@
-package com.pj.expensestracker.controller;
+package com.jchs.expensestracker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.pj.expensestracker.gui.component.AppTableView;
-import com.pj.expensestracker.model.Category1;
-import com.pj.expensestracker.service.CategoryService;
+import com.jchs.expensestracker.gui.component.AppTableView;
+import com.jchs.expensestracker.model.Category1;
+import com.jchs.expensestracker.service.CategoryService;
 
 import javafx.fxml.FXML;
 

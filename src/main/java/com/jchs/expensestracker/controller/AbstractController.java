@@ -1,4 +1,4 @@
-package com.pj.expensestracker.controller;
+package com.jchs.expensestracker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

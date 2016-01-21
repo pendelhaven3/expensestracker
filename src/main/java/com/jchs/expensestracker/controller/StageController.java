@@ -1,4 +1,4 @@
-package com.pj.expensestracker.controller;
+package com.jchs.expensestracker.controller;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -8,11 +8,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pj.expensestracker.ControllerFactory;
-import com.pj.expensestracker.NavigationHistory;
-import com.pj.expensestracker.NavigationHistoryItem;
-import com.pj.expensestracker.Parameter;
-import com.pj.expensestracker.model.Category1;
+import com.jchs.expensestracker.ControllerFactory;
+import com.jchs.expensestracker.NavigationHistory;
+import com.jchs.expensestracker.NavigationHistoryItem;
+import com.jchs.expensestracker.Parameter;
+import com.jchs.expensestracker.model.Category1;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

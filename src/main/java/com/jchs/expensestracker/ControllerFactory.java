@@ -1,4 +1,4 @@
-package com.pj.expensestracker;
+package com.jchs.expensestracker;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

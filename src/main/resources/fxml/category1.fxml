@@ -7,14 +7,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
-<?import com.pj.expensestracker.gui.component.AppDatePicker?>
+<?import com.jchs.expensestracker.gui.component.AppDatePicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TextArea?>
-<?import com.pj.expensestracker.gui.component.UppercaseTextField?>
+<?import com.jchs.expensestracker.gui.component.UppercaseTextField?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" 
-		fx:controller="com.pj.expensestracker.controller.Category1Controller" >
+		fx:controller="com.jchs.expensestracker.controller.Category1Controller" >
 	<top>
 		<ToolBar>
 			<Button text="Back" onAction="#doOnBack" />

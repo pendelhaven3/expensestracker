@@ -1,8 +1,8 @@
-package com.pj.expensestracker.service;
+package com.jchs.expensestracker.service;
 
 import java.util.List;
 
-import com.pj.expensestracker.model.Category1;
+import com.jchs.expensestracker.model.Category1;
 
 public interface CategoryService {
 
