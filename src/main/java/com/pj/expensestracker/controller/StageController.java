@@ -2,6 +2,7 @@ package com.pj.expensestracker.controller;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.util.Collections;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import com.pj.expensestracker.ControllerFactory;
 import com.pj.expensestracker.NavigationHistory;
 import com.pj.expensestracker.NavigationHistoryItem;
 import com.pj.expensestracker.Parameter;
+import com.pj.expensestracker.model.Category1;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -96,6 +98,18 @@ public class StageController {
 
 	public void showMainMenuScreen() {
 		loadSceneFromFXML("mainMenu");
+	}
+
+	public void showCategory1ListScreen() {
+		loadSceneFromFXML("category1List");
+	}
+
+	public void showAddCategory1Screen() {
+		loadSceneFromFXML("category1");
+	}
+
+	public void showEditCategory1Screen(Category1 category1) {
+		loadSceneFromFXML("category1", Collections.singletonMap("category1", category1));
 	}
 
 }
