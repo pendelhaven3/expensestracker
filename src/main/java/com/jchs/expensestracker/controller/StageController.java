@@ -13,6 +13,7 @@ import com.jchs.expensestracker.NavigationHistory;
 import com.jchs.expensestracker.NavigationHistoryItem;
 import com.jchs.expensestracker.Parameter;
 import com.jchs.expensestracker.model.Category1;
+import com.jchs.expensestracker.model.Category2;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -110,6 +111,18 @@ public class StageController {
 
 	public void showEditCategory1Screen(Category1 category1) {
 		loadSceneFromFXML("category1", Collections.singletonMap("category1", category1));
+	}
+
+	public void showCategory2ListScreen() {
+		loadSceneFromFXML("category2List");
+	}
+
+	public void showEditCategory2Screen(Category2 category2) {
+		loadSceneFromFXML("category2", Collections.singletonMap("category2", category2));
+	}
+
+	public void showAddCategory2Screen() {
+		loadSceneFromFXML("category2");
 	}
 
 }

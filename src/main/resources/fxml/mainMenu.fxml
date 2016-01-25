@@ -7,5 +7,6 @@
 		alignment="center" spacing="10">
 		
 	<Button text="Category 1" onAction="#goToCategory1ListScreen" />
+	<Button text="Category 2" onAction="#goToCategory2ListScreen" />
 	
 </VBox>

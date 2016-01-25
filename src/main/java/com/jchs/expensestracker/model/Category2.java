@@ -3,22 +3,34 @@ package com.jchs.expensestracker.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
-public class Category1 {
+public class Category2 {
 
 	@Id
 	@GeneratedValue
 	protected Long id;
+	
+	@ManyToOne
+	private Category1 parent;
 
+	private String description;
+	
 	public Long getId() {
 		return id;
 	}
 	
-	private String description;
+	public Category1 getParent() {
+		return parent;
+	}
+
+	public void setParent(Category1 parent) {
+		this.parent = parent;
+	}
 
 	public String getDescription() {
 		return description;
@@ -41,13 +53,8 @@ public class Category1 {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Category1 other = (Category1) obj;
+		Category2 other = (Category2) obj;
 		return new EqualsBuilder().append(id, other.getId()).isEquals();
 	}
 
-	@Override
-	public String toString() {
-		return description;
-	}
-	
 }
