@@ -9,15 +9,15 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
-public class Category2 {
+public class Category3 {
 
 	@Id
 	@GeneratedValue
 	protected Long id;
 	
 	@ManyToOne
-	private Category1 parent;
-
+	private Category2 parent;
+	
 	private String description;
 	
 	@Override
@@ -29,11 +29,11 @@ public class Category2 {
 		return id;
 	}
 	
-	public Category1 getParent() {
+	public Category2 getParent() {
 		return parent;
 	}
 
-	public void setParent(Category1 parent) {
+	public void setParent(Category2 parent) {
 		this.parent = parent;
 	}
 
@@ -58,8 +58,8 @@ public class Category2 {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Category2 other = (Category2) obj;
+		Category3 other = (Category3) obj;
 		return new EqualsBuilder().append(id, other.getId()).isEquals();
 	}
-	
+
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import com.jchs.expensestracker.gui.component.AppDatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import com.jchs.expensestracker.gui.component.UppercaseTextField?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+		fx:controller="com.jchs.expensestracker.controller.Category3Controller" >
+	<top>
+		<ToolBar>
+			<Button text="Back" onAction="#doOnBack" />
+			<Button fx:id="deleteButton" text="Delete" onAction="#deleteCategory3" disable="true" />
+		</ToolBar>
+	</top>
+	<center>
+		<VBox spacing="20" alignment="center">
+			<GridPane vgap="10" alignment="center">
+				<Label text="Parent Category 1" prefWidth="200"
+					GridPane.columnIndex="0" GridPane.rowIndex="0" />
+				<ComboBox fx:id="parent1ComboBox" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="0" />
+				<Label text="Parent Category 2" prefWidth="200"
+					GridPane.columnIndex="0" GridPane.rowIndex="1" />
+				<ComboBox fx:id="parent2ComboBox" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="Description"
+					GridPane.columnIndex="0" GridPane.rowIndex="2" />
+				<UppercaseTextField fx:id="descriptionField" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" />
+			</GridPane>
+			
+			<HBox spacing="10" alignment="center">
+				<Button text="Save" onAction="#saveCategory3" />
+				<Button text="Cancel" onAction="#doOnBack" />
+			</HBox>
+			
+		</VBox>
+	</center>
+</BorderPane>

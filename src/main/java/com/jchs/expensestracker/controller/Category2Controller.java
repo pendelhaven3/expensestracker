@@ -43,7 +43,8 @@ public class Category2Controller extends AbstractController {
 			descriptionField.setText(category2.getDescription());
 			deleteButton.setDisable(false);
 		}
-		descriptionField.requestFocus();
+		
+		parentComboBox.requestFocus();
 	}
 
 	private void setTitle() {

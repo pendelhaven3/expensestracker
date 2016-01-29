@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.jchs.expensestracker.model.Category1;
 import com.jchs.expensestracker.model.Category2;
+import com.jchs.expensestracker.model.Category3;
 
 public interface CategoryService {
 
@@ -26,5 +27,17 @@ public interface CategoryService {
 	void delete(Category2 category2);
 
 	Category2 findCategory2ByParentAndDescription(Category1 parent, String description);
+
+	Category3 getCategory3(Long id);
+
+	List<Category3> getAllLevel3Categories();
+
+	void save(Category3 category3);
+
+	void delete(Category3 category3);
+
+	List<Category2> findAllCategory2ByParent(Category1 parent);
+
+	Category3 findCategory3ByParentAndDescription(Category2 value, String text);
 	
 }
