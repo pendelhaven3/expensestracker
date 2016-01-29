@@ -1,11 +1,11 @@
 package com.jchs.expensestracker.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 
 import com.jchs.expensestracker.Parameter;
 import com.jchs.expensestracker.gui.ShowDialog;
@@ -70,7 +70,7 @@ public class Category2Controller extends AbstractController {
 			category2 = new Category2();
 		}
 		category2.setParent(parentComboBox.getValue());
-		category2.setDescription(descriptionField.getText());
+		category2.setDescription(StringUtils.strip(descriptionField.getText()));
 		
 		try {
 			categoryService.save(category2);
@@ -109,7 +109,7 @@ public class Category2Controller extends AbstractController {
 
 	private boolean isDescriptionAlreadyUsed() {
 		Category2 existing = categoryService.findCategory2ByParentAndDescription(
-				parentComboBox.getValue(), descriptionField.getText());
+				parentComboBox.getValue(), StringUtils.strip(descriptionField.getText()));
 		if (existing != null) {
 			if (category2 == null) {
 				return true;

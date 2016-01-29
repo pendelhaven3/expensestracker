@@ -103,8 +103,8 @@ public class ExpenseController extends AbstractController {
 		expense.setCategory2(category2ComboBox.getValue());
 		expense.setCategory3(category3ComboBox.getValue());
 		expense.setDateOfTransaction(DateUtil.toDate(dateOfTransactionDatePicker.getValue()));
-		expense.setParticulars(particularsField.getText());
-		expense.setAmount(NumberUtil.toBigDecimal(amountField.getText()));
+		expense.setParticulars(StringUtils.strip(particularsField.getText()));
+		expense.setAmount(NumberUtil.toBigDecimal(StringUtils.strip(amountField.getText())));
 		expense.setDateEntered(new Date());
 		
 		try {
@@ -190,7 +190,7 @@ public class ExpenseController extends AbstractController {
 	}
 
 	private boolean isAmountNotValid() {
-		return !NumberUtil.isAmount(amountField.getText());
+		return !NumberUtil.isAmount(StringUtils.strip(amountField.getText()));
 	}
 	
 	@FXML
