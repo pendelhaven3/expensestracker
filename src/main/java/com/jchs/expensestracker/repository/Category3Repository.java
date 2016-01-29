@@ -14,5 +14,7 @@ public interface Category3Repository extends JpaRepository<Category3, Long> {
 	List<Category3> findAll();
 
 	Category3 findByParentAndDescription(Category2 parent, String description);
+
+	List<Category3> findAllByParent(Category2 parent);
 	
 }

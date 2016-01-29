@@ -108,4 +108,9 @@ public class CategoryServiceImpl implements CategoryService {
 		return category3Repository.findByParentAndDescription(parent, description);
 	}
 
+	@Override
+	public List<Category3> findAllCategory3ByParent(Category2 parent) {
+		return category3Repository.findAllByParent(parent);
+	}
+
 }

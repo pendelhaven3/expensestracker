@@ -38,6 +38,8 @@ public interface CategoryService {
 
 	List<Category2> findAllCategory2ByParent(Category1 parent);
 
-	Category3 findCategory3ByParentAndDescription(Category2 value, String text);
+	Category3 findCategory3ByParentAndDescription(Category2 parent, String description);
+
+	List<Category3> findAllCategory3ByParent(Category2 parent);
 	
 }

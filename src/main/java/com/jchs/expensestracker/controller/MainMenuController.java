@@ -12,6 +12,11 @@ public class MainMenuController extends AbstractController {
 	}
 
 	@FXML 
+	public void goToExpensesListScreen() {
+		stageController.showExpensesListScreen();
+	}
+
+	@FXML 
 	public void goToCategory1ListScreen() {
 		stageController.showCategory1ListScreen();
 	}
