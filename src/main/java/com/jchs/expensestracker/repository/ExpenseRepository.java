@@ -10,11 +10,12 @@ import com.jchs.expensestracker.model.Expense;
 
 public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 
-	@Query("select e from Expense e"
-			+ " order by e.category1.description,"
+	@Query("SELECT e FROM Expense e"
+			+ " LEFT JOIN e.category3 c3"
+			+ " ORDER BY e.category1.description,"
 			+ " e.category2.description,"
-			+ " e.category3.description,"
-			+ " e.dateEntered desc")
+			+ " c3.description,"
+			+ " e.dateEntered DESC")
 	List<Expense> findAll();
 
 	List<Expense> findByCategory3(Category3 category3);

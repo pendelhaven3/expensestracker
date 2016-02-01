@@ -132,12 +132,6 @@ public class ExpenseController extends AbstractController {
 			return false;
 		}
 		
-		if (isCategory3NotSpecified()) {
-			ShowDialog.error("Category 3 must be specified");
-			category3ComboBox.requestFocus();
-			return false;
-		}
-		
 		if (isDateOfTransactionNotSpecified()) {
 			ShowDialog.error("Date of Transaction must be specified");
 			dateOfTransactionDatePicker.requestFocus();
@@ -171,10 +165,6 @@ public class ExpenseController extends AbstractController {
 	
 	private boolean isCategory2NotSpecified() {
 		return category2ComboBox.getValue() == null;
-	}
-	
-	private boolean isCategory3NotSpecified() {
-		return category3ComboBox.getValue() == null;
 	}
 	
 	private boolean isDateOfTransactionNotSpecified() {
