@@ -126,6 +126,11 @@ public class Category2Controller extends AbstractController {
 
 	@FXML 
 	public void deleteCategory2() {
+		if (categoryService.isCategory2AlreadyUsed(category2)) {
+			ShowDialog.error("Cannot delete category that is already used by an existing record");
+			return;
+		}
+		
 		if (!ShowDialog.confirm("Delete record?")) {
 			return;
 		}

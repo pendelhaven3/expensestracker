@@ -41,5 +41,11 @@ public interface CategoryService {
 	Category3 findCategory3ByParentAndDescription(Category2 parent, String description);
 
 	List<Category3> findAllCategory3ByParent(Category2 parent);
+
+	boolean isCategory1AlreadyUsed(Category1 category1);
+
+	boolean isCategory2AlreadyUsed(Category2 category2);
+
+	boolean isCategory3AlreadyUsed(Category3 category3);
 	
 }

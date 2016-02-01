@@ -13,6 +13,7 @@ import com.jchs.expensestracker.model.Category3;
 import com.jchs.expensestracker.repository.Category1Repository;
 import com.jchs.expensestracker.repository.Category2Repository;
 import com.jchs.expensestracker.repository.Category3Repository;
+import com.jchs.expensestracker.repository.ExpenseRepository;
 import com.jchs.expensestracker.service.CategoryService;
 
 @Service
@@ -21,6 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
 	@Autowired private Category1Repository category1Repository;
 	@Autowired private Category2Repository category2Repository;
 	@Autowired private Category3Repository category3Repository;
+	@Autowired private ExpenseRepository expenseRepository;
 	
 	@Override
 	public List<Category1> getAllLevel1Categories() {
@@ -111,6 +113,21 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public List<Category3> findAllCategory3ByParent(Category2 parent) {
 		return category3Repository.findAllByParent(parent);
+	}
+
+	@Override
+	public boolean isCategory1AlreadyUsed(Category1 category1) {
+		return !findAllCategory2ByParent(category1).isEmpty();
+	}
+
+	@Override
+	public boolean isCategory2AlreadyUsed(Category2 category2) {
+		return !findAllCategory3ByParent(category2).isEmpty();
+	}
+
+	@Override
+	public boolean isCategory3AlreadyUsed(Category3 category3) {
+		return !expenseRepository.findByCategory3(category3).isEmpty();
 	}
 
 }
