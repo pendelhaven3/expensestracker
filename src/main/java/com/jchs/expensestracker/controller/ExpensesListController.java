@@ -20,16 +20,13 @@ public class ExpensesListController extends AbstractController {
 	
 	@Override
 	public void updateDisplay() {
+		stageController.setTitle("Expenses List");
 		expensesTable.getItems().setAll(expenseService.getAllExpenses());
 		expensesTable.setDoubleClickAndEnterKeyAction(() -> selectExpense());
 	}
 	
 	private void selectExpense() {
 		stageController.showEditExpenseScreen(expensesTable.getSelectedItem());
-	}
-
-	public void setTitle() {
-		stageController.setTitle("Expenses List");
 	}
 
 	public void doOnBack() {

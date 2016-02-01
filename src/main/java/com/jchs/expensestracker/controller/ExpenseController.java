@@ -48,6 +48,7 @@ public class ExpenseController extends AbstractController {
 	
 	@Override
 	public void updateDisplay() {
+		setTitle();
 		category1ComboBox.getItems().setAll(categoryService.getAllLevel1Categories());
 		updateCategory2ComboBoxWhenCategory1ComboBoxChanges();
 		updateCategory3ComboBoxWhenCategory2ComboBoxChanges();
@@ -64,6 +65,14 @@ public class ExpenseController extends AbstractController {
 		}
 		
 		category1ComboBox.requestFocus();
+	}
+
+	private void setTitle() {
+		if (expense != null) {
+			stageController.setTitle("Edit Expense");
+		} else {
+			stageController.setTitle("Add New Expense");
+		}
 	}
 
 	private void updateCategory2ComboBoxWhenCategory1ComboBoxChanges() {
