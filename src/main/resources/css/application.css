@@ -1,6 +1,6 @@
 .root{
     -fx-font-size: 12pt;
-    -fx-font-family: "Helvetica";
+    -fx-font-family: "Calibri";
     -fx-font-weight: bold;
 }
 
@@ -10,4 +10,153 @@
 
 .right {
 	-fx-alignment: center-right;
+}
+
+.tab-header-background {
+	-fx-background-color: white;
+	-fx-border-color: #b5b5b5;
+	-fx-border-style: hidden hidden solid hidden;
+}
+
+.tab {
+    -fx-border-color: #b5b5b5;
+    -fx-border-width: 2;
+    -fx-border-radius: 5 5 0 0;
+    -fx-border-insets: 0 2 0 0;
+    -fx-background-insets: 0 1 0 0;
+	-fx-focus-color: transparent; 
+}
+
+.tab:selected {
+    -fx-border-color: black;
+}
+
+.vbox-content {
+	-fx-border-color: #b5b5b5;
+	-fx-padding: 10px;
+}
+
+AppTableView {
+	-fx-border-color: #b5b5b5;
+}
+
+/* .table-row-cell:odd and .table-row-cell:focused:odd removes the alternating row color */
+.table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.table-row-cell:focused:odd {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-control-inner-background;
+    -fx-background-insets: 0, 1, 2;
+}
+
+.table-view:row-selection .table-row-cell:selected { 
+    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1, 2 2 3 2, 3 3 4 3;
+    -fx-border-insets: 0, 1, 2;
+    -fx-border-style: solid;
+}
+
+.table-row-cell:selected .table-cell { 
+    -fx-text-fill: black;
+    -fx-border-insets: 0 -1 0 0; /* seems to remove borders between cells */
+}
+
+.controls {
+	-fx-padding: 5;
+	-fx-border-style: hidden solid hidden solid;
+	-fx-border-color: #b5b5b5;
+}
+
+.control-button {
+	-fx-pref-width: 30;
+	-fx-pref-height: 30;
+    -fx-background-radius: 5;
+}
+
+/* COLORS */
+
+.company-expenses, 
+.company-expenses .tab-header-background {
+	-fx-background-color: #abffff;
+}
+
+.personal-expenses {
+	-fx-background-color: #ffffab;
+}
+
+.office-materials {
+	-fx-background-color: #42a3ff;
+}
+
+.diesel,
+.diesel .tab-header-background {
+	-fx-background-color: #edb100;
+}
+
+.diesel-l300,
+.truck-repair-l300 {
+	-fx-background-color: #2dffc9;
+}
+
+.diesel-nkr420,
+.diesel-nkr420 .table-row-cell,
+.truck-repair-nkr420 {
+	-fx-background-color: #cd99ff;
+}
+
+.truck-repair {
+	-fx-background-color: #94ff6c;
+}
+
+.utilities,
+.utilities .tab-header-background {
+	-fx-background-color: #ffa2ff;
+}
+
+.utilities-meralco {
+	-fx-background-color: #ffffa2;
+}
+
+.utilities-maynilad {
+	-fx-background-color: #9090ff;
+}
+
+.utilities-telephone,
+.utilities-cable {
+	-fx-background-color: #ffa27e;
+}
+
+.salaries,
+.salaries-yaya {
+	-fx-background-color: #51ff7f;
+}
+
+.govt-duties {
+	-fx-background-color: #366aff;
+}
+
+.govt-benefits {
+	-fx-background-color: #12ff8a;
+}
+
+.repair {
+	-fx-background-color: #ff6a36;
+}
+
+.miscellaneous,
+.miscellaneous-personal {
+	-fx-background-color: #acacac;
+}
+
+.withdrawals {
+	-fx-background-color: #48cfff;
+}
+
+.diesel-personal {
+	-fx-background-color: #edb100;
+}
+
+.groceries {
+	-fx-background-color: #ffc92d;
 }

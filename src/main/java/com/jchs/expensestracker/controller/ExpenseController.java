@@ -45,6 +45,9 @@ public class ExpenseController extends AbstractController {
 	@FXML private Button deleteButton;
 	
 	@Parameter private Expense expense;
+	@Parameter private Category1 category1;
+	@Parameter private Category2 category2;
+	@Parameter private Category3 category3;
 	
 	@Override
 	public void updateDisplay() {
@@ -62,9 +65,15 @@ public class ExpenseController extends AbstractController {
 			particularsField.setText(expense.getParticulars());
 			amountField.setText(FormatterUtil.formatAmount(expense.getAmount()));
 			deleteButton.setDisable(false);
+			
+			category1ComboBox.requestFocus();
+		} else {
+			category1ComboBox.setValue(category1);
+			category2ComboBox.setValue(category2);
+			category3ComboBox.setValue(category3);
+			
+			dateOfTransactionDatePicker.requestFocus();
 		}
-		
-		category1ComboBox.requestFocus();
 	}
 
 	private void setTitle() {

@@ -1,6 +1,7 @@
 package com.jchs.expensestracker.controller;
 
 import org.springframework.stereotype.Controller;
+
 import javafx.fxml.FXML;
 
 @Controller

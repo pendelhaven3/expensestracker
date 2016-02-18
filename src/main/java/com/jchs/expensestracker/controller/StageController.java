@@ -3,6 +3,7 @@ package com.jchs.expensestracker.controller;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,6 +112,15 @@ public class StageController {
 		loadSceneFromFXML("expense");
 	}
 
+	public void showAddExpenseScreen(Category1 category1, Category2 category2, Category3 category3) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("category1", category1);
+		params.put("category2", category2);
+		params.put("category3", category3);
+		
+		loadSceneFromFXML("expense", params);
+	}
+	
 	public void showEditExpenseScreen(Expense expense) {
 		loadSceneFromFXML("expense", Collections.singletonMap("expense", expense));
 	}
