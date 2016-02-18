@@ -100,10 +100,6 @@ public class StageController {
 		stage.setTitle("Expenses Tracker - " + title);
 	}
 
-	public void showMainMenuScreen() {
-		loadSceneFromFXML("mainMenu");
-	}
-
 	public void showExpensesListScreen() {
 		loadSceneFromFXML("expensesList");
 	}

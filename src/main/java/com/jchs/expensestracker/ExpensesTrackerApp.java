@@ -39,7 +39,7 @@ public class ExpensesTrackerApp extends Application {
 		if (isDatabaseNotFound()) {
 			ShowDialog.error("Database not found");
 		} else {
-			showMainMenuScreen();
+			showInitialScreen();
 		}
 	}
 
@@ -55,10 +55,10 @@ public class ExpensesTrackerApp extends Application {
 		return false;
 	}
 
-	private void showMainMenuScreen() {
+	private void showInitialScreen() {
 		StageController stageController = context.getBean(StageController.class);
 		stageController.setStage(stage);
-		stageController.showMainMenuScreen();
+		stageController.showExpensesListScreen();
 		stage.setResizable(true);
 		stage.show();
 	}

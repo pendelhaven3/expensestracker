@@ -19,10 +19,6 @@
 		fx:controller="com.jchs.expensestracker.controller.ExpensesListController" 
 	alignment="center">
 	
-	<ToolBar>
-		<Button text="Back" onAction="#doOnBack" />
-	</ToolBar>
-	
 	<TabPane VBox.vgrow="always">
 		<tabs>
 			<Tab text="Company Expenses" closable="false" styleClass="tab,company-expenses">
