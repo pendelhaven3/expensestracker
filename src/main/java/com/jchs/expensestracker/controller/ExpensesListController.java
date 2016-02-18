@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.jchs.expensestracker.PersistentScene;
 import com.jchs.expensestracker.gui.ShowDialog;
 import com.jchs.expensestracker.gui.component.AddExpenseButton;
 import com.jchs.expensestracker.gui.component.AppTableView;
@@ -25,6 +26,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 
 @Controller
+@PersistentScene
 public class ExpensesListController extends AbstractController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpensesListController.class);
