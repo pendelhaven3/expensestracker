@@ -33,7 +33,7 @@ public class AppTableView<T> extends TableView<T> {
 	private void setEnterKeyAction(CustomAction action) {
 		setOnKeyPressed(e -> {
 			if (e.getCode().equals(KeyCode.ENTER)) {
-				action.doAction();
+				action.doAction(e);
 			}
 		});
 	}
@@ -48,7 +48,7 @@ public class AppTableView<T> extends TableView<T> {
 				
 				@Override
 				protected void onDoubleClick(MouseEvent event) {
-					action.doAction();
+					action.doAction(event);
 				}
 			});
 		} else {
@@ -60,7 +60,7 @@ public class AppTableView<T> extends TableView<T> {
 		if (action != null) {
 			setOnKeyPressed(e -> {
 				if (e.getCode().equals(KeyCode.DELETE)) {
-					action.doAction();
+					action.doAction(e);
 				}
 			});
 		} else {

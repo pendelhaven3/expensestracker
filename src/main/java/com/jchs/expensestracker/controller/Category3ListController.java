@@ -20,7 +20,7 @@ public class Category3ListController extends AbstractController {
 	public void updateDisplay() {
 		stageController.setTitle("Category 3 List");
 		categoriesTable.getItems().setAll(categoryService.getAllLevel3Categories());
-		categoriesTable.setDoubleClickAndEnterKeyAction(() -> editSelectedCategory3());
+		categoriesTable.setDoubleClickAndEnterKeyAction(event -> editSelectedCategory3());
 	}
 
 	private void editSelectedCategory3() {

@@ -12,8 +12,12 @@
 	-fx-alignment: center-right;
 }
 
+.tab-content-area {
+	-fx-background-color: #93cddd;
+}
+
 .tab-header-background {
-	-fx-background-color: white;
+	-fx-background-color: #93cddd;
 	-fx-border-color: #b5b5b5;
 	-fx-border-style: hidden hidden solid hidden;
 }
@@ -23,8 +27,10 @@
     -fx-border-width: 2;
     -fx-border-radius: 5 5 0 0;
     -fx-border-insets: 0 2 0 0;
-    -fx-background-insets: 0 1 0 0;
-	-fx-focus-color: transparent; 
+    -fx-background-radius: 5 5 0 0;
+    -fx-background-insets: 0 2 0 0;
+	-fx-focus-color: transparent;
+	-fx-text-fill: white; 
 }
 
 .tab:selected {
@@ -40,26 +46,46 @@ AppTableView {
 	-fx-border-color: #b5b5b5;
 }
 
-/* .table-row-cell:odd and .table-row-cell:focused:odd removes the alternating row color */
+.table-view {
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableViewSkin";
+    -fx-background-color: -fx-box-border, #ffffcc;
+    -fx-background-insets: 0,1;
+    -fx-padding: 1; /* 0.083333em; */
+    -fx-table-header-border-color: #959595;
+    -fx-table-cell-border-color: #bbbbbb;
+}
+
+.table-row-cell {
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableRowSkin";
+    -fx-background-color: -fx-table-cell-border-color, #ffffcc;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+    -fx-text-fill: black;
+}
+
 .table-row-cell:odd {
-    -fx-background-color: -fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-background-color: -fx-table-cell-border-color, derive(#ffffcc,-5%);
     -fx-background-insets: 0, 0 0 1 0;
 }
 
-.table-row-cell:focused:odd {
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-control-inner-background;
+.table-row-cell:focused {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, #ffffcc;
     -fx-background-insets: 0, 1, 2;
 }
 
-.table-view:row-selection .table-row-cell:selected { 
-    -fx-background-insets: 0, 0 0 1 0, 1 1 2 1, 2 2 3 2, 3 3 4 3;
-    -fx-border-insets: 0, 1, 2;
-    -fx-border-style: solid;
+.table-row-cell:focused:odd {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, derive(#ffffcc,-5%);
+    -fx-background-insets: 0, 1, 2;
 }
 
-.table-row-cell:selected .table-cell { 
+.table-cell {
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableCellSkin";
+    -fx-padding: 0.166667em; /* 2px, plus border adds 1px */
+    -fx-background-color: transparent;
+    -fx-border-color: transparent -fx-table-cell-border-color transparent transparent;
+    -fx-border-width: 0.083333em; /* 1 */
+    -fx-cell-size: 2.0em; /* 24 */
     -fx-text-fill: black;
-    -fx-border-insets: 0 -1 0 0; /* seems to remove borders between cells */
 }
 
 .controls {
@@ -76,87 +102,132 @@ AppTableView {
 
 /* COLORS */
 
-.company-expenses, 
-.company-expenses .tab-header-background {
-	-fx-background-color: #abffff;
+#companyExpensesTab {
+	-fx-background-color: #0000cc;
 }
 
-.personal-expenses {
-	-fx-background-color: #ffffab;
+#companyExpensesTab .tab-label {
+    -fx-text-fill: white;
 }
 
-.office-materials {
-	-fx-background-color: #42a3ff;
+#personalExpensesTab {
+	-fx-background-color: #0099cc;
 }
 
-.diesel,
-.diesel .tab-header-background {
-	-fx-background-color: #edb100;
+#personalExpensesTab .tab-label {
+    -fx-text-fill: white;
 }
 
-.diesel-l300,
-.truck-repair-l300 {
-	-fx-background-color: #2dffc9;
+#officeMaterialsTab {
+	-fx-background-color: #fc9ee3;
 }
 
-.diesel-nkr420,
-.diesel-nkr420 .table-row-cell,
-.truck-repair-nkr420 {
-	-fx-background-color: #cd99ff;
+#dieselTab {
+	-fx-background-color: #66ffcc;
 }
 
-.truck-repair {
-	-fx-background-color: #94ff6c;
+#dieselL300Tab,
+#truckRepairL300Tab {
+	-fx-background-color: #386598;
 }
 
-.utilities,
-.utilities .tab-header-background {
-	-fx-background-color: #ffa2ff;
+#dieselL300Tab .tab-label,
+#truckRepairL300Tab .tab-label {
+	-fx-text-fill: white;
 }
 
-.utilities-meralco {
-	-fx-background-color: #ffffa2;
+#dieselNkr420Tab,
+#truckRepairNkr420Tab {
+	-fx-background-color: #215867;
 }
 
-.utilities-maynilad {
-	-fx-background-color: #9090ff;
+#dieselNkr420Tab .tab-label,
+#truckRepairNkr420Tab .tab-label {
+	-fx-text-fill: white;
 }
 
-.utilities-telephone,
-.utilities-cable {
-	-fx-background-color: #ffa27e;
+#truckRepairTab {
+	-fx-background-color: #cc66ff;
 }
 
-.salaries,
-.salaries-yaya {
-	-fx-background-color: #51ff7f;
+#utilitiesTab {
+	-fx-background-color: #fac090;
 }
 
-.govt-duties {
-	-fx-background-color: #366aff;
+#companyUtilitiesMeralcoTab,
+#personalUtilitiesMeralcoTab {
+	-fx-background-color: #953735;
 }
 
-.govt-benefits {
-	-fx-background-color: #12ff8a;
+#companyUtilitiesMeralcoTab .tab-label,
+#personalUtilitiesMeralcoTab .tab-label {
+	-fx-text-fill: white;
 }
 
-.repair {
-	-fx-background-color: #ff6a36;
+#companyUtilitiesMayniladTab,
+#personalUtilitiesMayniladTab {
+	-fx-background-color: #6f236b;
 }
 
-.miscellaneous,
-.miscellaneous-personal {
-	-fx-background-color: #acacac;
+#companyUtilitiesMayniladTab .tab-label,
+#personalUtilitiesMayniladTab .tab-label {
+	-fx-text-fill: white;
 }
 
-.withdrawals {
-	-fx-background-color: #48cfff;
+#companyUtilitiesTelephoneTab,
+#personalUtilitiesCableTab {
+	-fx-background-color: #6600ff;
 }
 
-.diesel-personal {
-	-fx-background-color: #edb100;
+#companyUtilitiesTelephoneTab .tab-label,
+#personalUtilitiesCableTab .tab-label {
+	-fx-text-fill: white;
 }
 
-.groceries {
-	-fx-background-color: #ffc92d;
+#companySalariesTab {
+	-fx-background-color: #ff3399;
+}
+
+#governmentDutiesTab {
+	-fx-background-color: #d99795;
+}
+
+#governmentBenefitsTab {
+	-fx-background-color: #ffff99;
+}
+
+#repairTab {
+	-fx-background-color: #92d050;
+}
+
+#companyMiscellaneousTab {
+	-fx-background-color: #dbeef3;
+}
+
+#withdrawalsTab {
+	-fx-background-color: #fb9fae;
+}
+
+#personalDieselTab {
+	-fx-background-color: #ddd9c3;
+}
+
+#groceriesTab {
+	-fx-background-color: #ecb184;
+}
+
+#personalUtilitiesTab {
+	-fx-background-color: #fc9ee3;
+}
+
+#personalSalariesTab {
+	-fx-background-color: #b6dde8;
+}
+
+#personalMiscellaneousTab {
+	-fx-background-color: #fef4d0;
+}
+
+.workArea {
+	-fx-background-color: #ffffcc;
 }

@@ -22,7 +22,7 @@
 		</ToolBar>
 	</top>
 	<center>
-		<VBox spacing="20" alignment="center">
+		<VBox spacing="20" alignment="center" styleClass="workArea">
 			<GridPane vgap="10" alignment="center">
 				<Label text="Category 1" prefWidth="200"
 					GridPane.columnIndex="0" GridPane.rowIndex="0" />

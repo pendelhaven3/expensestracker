@@ -1,7 +1,9 @@
 package com.jchs.expensestracker.gui.component;
 
+import javafx.event.Event;
+
 public interface CustomAction {
 	
-	void doAction();
+	void doAction(Event event);
 
 }
