@@ -146,6 +146,10 @@ public class StageController {
 		loadSceneFromFXML("expensesList");
 	}
 
+	public void showExpensesList2Screen() {
+		loadSceneFromFXML("expensesList2");
+	}
+
 	public void showAddExpenseScreen() {
 		loadSceneFromFXML("expense");
 	}
@@ -197,6 +201,10 @@ public class StageController {
 
 	public void showCategory3ListScreen() {
 		loadSceneFromFXML("category3List");
+	}
+
+	public void showMainMenuScreen() {
+		loadSceneFromFXML("mainMenu");
 	}
 
 }
