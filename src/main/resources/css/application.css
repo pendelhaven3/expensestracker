@@ -231,3 +231,128 @@ AppTableView {
 .workArea {
 	-fx-background-color: #ffffcc;
 }
+
+/* COLORS */
+
+.category1Tab-bgColor1 {
+	-fx-background-color: #0000cc;
+}
+
+.category1Tab-bgColor2 {
+	-fx-background-color: #0099cc;
+}
+
+.category1Tab-bgColor1 .tab-label,
+.category1Tab-bgColor2 .tab-label {
+    -fx-text-fill: white;
+}
+
+.category2Tab-bgColor1 {
+	-fx-background-color: #fc9ee3;
+}
+
+.category2Tab-bgColor2 {
+	-fx-background-color: #66ffcc;
+}
+
+#dieselL300Tab,
+#truckRepairL300Tab {
+	-fx-background-color: #386598;
+}
+
+#dieselL300Tab .tab-label,
+#truckRepairL300Tab .tab-label {
+	-fx-text-fill: white;
+}
+
+#dieselNkr420Tab,
+#truckRepairNkr420Tab {
+	-fx-background-color: #215867;
+}
+
+#dieselNkr420Tab .tab-label,
+#truckRepairNkr420Tab .tab-label {
+	-fx-text-fill: white;
+}
+
+#truckRepairTab {
+	-fx-background-color: #cc66ff;
+}
+
+#utilitiesTab {
+	-fx-background-color: #fac090;
+}
+
+#companyUtilitiesMeralcoTab,
+#personalUtilitiesMeralcoTab {
+	-fx-background-color: #953735;
+}
+
+#companyUtilitiesMeralcoTab .tab-label,
+#personalUtilitiesMeralcoTab .tab-label {
+	-fx-text-fill: white;
+}
+
+#companyUtilitiesMayniladTab,
+#personalUtilitiesMayniladTab {
+	-fx-background-color: #6f236b;
+}
+
+#companyUtilitiesMayniladTab .tab-label,
+#personalUtilitiesMayniladTab .tab-label {
+	-fx-text-fill: white;
+}
+
+#companyUtilitiesTelephoneTab,
+#personalUtilitiesCableTab {
+	-fx-background-color: #6600ff;
+}
+
+#companyUtilitiesTelephoneTab .tab-label,
+#personalUtilitiesCableTab .tab-label {
+	-fx-text-fill: white;
+}
+
+#companySalariesTab {
+	-fx-background-color: #ff3399;
+}
+
+#governmentDutiesTab {
+	-fx-background-color: #d99795;
+}
+
+#governmentBenefitsTab {
+	-fx-background-color: #ffff99;
+}
+
+#repairTab {
+	-fx-background-color: #92d050;
+}
+
+#companyMiscellaneousTab {
+	-fx-background-color: #dbeef3;
+}
+
+#withdrawalsTab {
+	-fx-background-color: #fb9fae;
+}
+
+#personalDieselTab {
+	-fx-background-color: #ddd9c3;
+}
+
+#groceriesTab {
+	-fx-background-color: #ecb184;
+}
+
+#personalUtilitiesTab {
+	-fx-background-color: #fc9ee3;
+}
+
+#personalSalariesTab {
+	-fx-background-color: #b6dde8;
+}
+
+#personalMiscellaneousTab {
+	-fx-background-color: #fef4d0;
+}

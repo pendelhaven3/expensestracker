@@ -36,6 +36,29 @@ public class ExpensesList2Controller extends AbstractController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpensesList2Controller.class);
 	
+	private static final String[] CATEGORY_1_COLORS = {
+			"category1Tab-bgColor1",	
+			"category1Tab-bgColor2"	
+	};
+	
+	private static final String[] CATEGORY_2_COLORS = {
+			"category2Tab-bgColor1",	
+			"category2Tab-bgColor2",	
+			"category2Tab-bgColor3",	
+			"category2Tab-bgColor4",	
+			"category2Tab-bgColor5",	
+			"category2Tab-bgColor6",	
+			"category2Tab-bgColor7",	
+			"category2Tab-bgColor8",	
+			"category2Tab-bgColor9"	
+	};
+		
+	private static final String[] CATEGORY_3_COLORS = {
+			"category3Tab-bgColor1",	
+			"category3Tab-bgColor2",	
+			"category3Tab-bgColor3"
+	};
+		
 	@Autowired private ExpenseService expenseService;
 	@Autowired private CategoryService categoryService;
 	
@@ -50,10 +73,12 @@ public class ExpensesList2Controller extends AbstractController {
 	private void createTabs() {
 		List<Expense> expenses = expenseService.getAllExpenses();
 		
+		int category1Index = 0;
 		for (Category1 category1 : categoryService.getAllLevel1Categories()) {
 			Tab category1Tab = new Tab();
 			category1Tab.setText(category1.getDescription());
 			category1Tab.setClosable(false);
+			category1Tab.getStyleClass().add(CATEGORY_1_COLORS[category1Index % CATEGORY_1_COLORS.length]);
 			category1TabPane.getTabs().add(category1Tab);
 
 			VBox category1VBox = new VBox();
@@ -64,10 +89,12 @@ public class ExpensesList2Controller extends AbstractController {
 			VBox.setVgrow(category2TabPane, Priority.ALWAYS);
 			category1VBox.getChildren().add(category2TabPane);
 			
+			int category2Index = 0;
 			for (Category2 category2 : categoryService.findAllCategory2ByParent(category1)) {
 				Tab category2Tab = new Tab();
 				category2Tab.setText(category2.getDescription());
 				category2Tab.setClosable(false);
+				category2Tab.getStyleClass().add(CATEGORY_2_COLORS[category2Index % CATEGORY_2_COLORS.length]);
 				category2TabPane.getTabs().add(category2Tab);
 
 				VBox category2VBox = new VBox();
@@ -92,10 +119,12 @@ public class ExpensesList2Controller extends AbstractController {
 					VBox.setVgrow(category3TabPane, Priority.ALWAYS);
 					category2VBox.getChildren().add(category3TabPane);
 					
+					int category3Index = 0;
 					for (Category3 category3 : categoryService.findAllCategory3ByParent(category2)) {
 						Tab category3Tab = new Tab();
 						category3Tab.setText(category3.getDescription());
 						category3Tab.setClosable(false);
+						category3Tab.getStyleClass().add(CATEGORY_3_COLORS[category3Index % CATEGORY_3_COLORS.length]);
 						category3TabPane.getTabs().add(category3Tab);
 
 						VBox category3VBox = new VBox();
@@ -111,9 +140,13 @@ public class ExpensesList2Controller extends AbstractController {
 						
 						hbox.getChildren().add(createAddExpenseButton(category1, category2, category3));
 						hbox.getChildren().add(createDeleteExpenseButton(tableView));
+						
+						category3Index++;
 					}
 				}
+				category2Index++;
 			}
+			category1Index++;
 		}
 	}
 
