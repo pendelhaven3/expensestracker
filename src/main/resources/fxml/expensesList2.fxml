@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TabPane?>
-
-<VBox xmlns:fx="http://javafx.com/fxml" alignment="center"
-		fx:controller="com.jchs.expensestracker.controller.ExpensesList2Controller">
-	<TabPane VBox.vgrow="always" fx:id="category1TabPane" />
-</VBox>

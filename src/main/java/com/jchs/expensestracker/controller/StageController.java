@@ -118,7 +118,12 @@ public class StageController {
 		NavigationHistoryItem previousScreen = history.getPreviousScreen();
 		loadSceneFromFXML(previousScreen.getSceneName(), previousScreen.getModel());
 	}
-	
+
+	public void back(Map<String, Object> model) {
+		NavigationHistoryItem previousScreen = history.getPreviousScreen();
+		loadSceneFromFXML(previousScreen.getSceneName(), model);
+	}
+
 	public void setTitle(String title) {
 		stage.setTitle("Expenses Tracker - " + title);
 	}
@@ -146,8 +151,13 @@ public class StageController {
 		loadSceneFromFXML("expensesList");
 	}
 
-	public void showExpensesList2Screen() {
-		loadSceneFromFXML("expensesList2");
+	public void showExpensesListScreen(Category1 category1, Category2 category2, Category3 category3) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("category1", category1);
+		params.put("category2", category2);
+		params.put("category3", category3);
+		
+		loadSceneFromFXML("expensesList", params);
 	}
 
 	public void showAddExpenseScreen() {

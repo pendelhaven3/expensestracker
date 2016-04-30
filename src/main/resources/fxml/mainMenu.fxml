@@ -6,7 +6,9 @@
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.jchs.expensestracker.controller.MainMenuController"
 		alignment="center" spacing="10">
 		
-	<Button text="Expenses" onAction="#goToExpensesListScreen" />
-	<Button text="Expenses 2" onAction="#goToExpensesList2Screen" />
+	<Button text="Expenses" onAction="#goToExpensesList2Screen" />
+	<Button text="Category 1" onAction="#goToCategory1ListScreen" />
+	<Button text="Category 2" onAction="#goToCategory2ListScreen" />
+	<Button text="Category 3" onAction="#goToCategory3ListScreen" />
 	
 </VBox>

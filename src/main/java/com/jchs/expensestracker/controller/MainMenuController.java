@@ -19,7 +19,7 @@ public class MainMenuController extends AbstractController {
 
 	@FXML 
 	public void goToExpensesList2Screen() {
-		stageController.showExpensesList2Screen();
+		stageController.showExpensesListScreen();
 	}
 
 	@FXML 

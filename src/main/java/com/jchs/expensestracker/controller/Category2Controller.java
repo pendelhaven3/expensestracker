@@ -30,6 +30,7 @@ public class Category2Controller extends AbstractController {
 	
 	@FXML private ComboBox<Category1> parentComboBox;
 	@FXML private TextField descriptionField;
+	@FXML private TextField shortDescriptionField;
 	@FXML private Button deleteButton;
 	
 	@Override
@@ -41,6 +42,7 @@ public class Category2Controller extends AbstractController {
 			category2 = categoryService.getCategory2(category2.getId());
 			parentComboBox.setValue(category2.getParent());
 			descriptionField.setText(category2.getDescription());
+			shortDescriptionField.setText(category2.getShortDescription());
 			deleteButton.setDisable(false);
 		}
 		
@@ -71,6 +73,7 @@ public class Category2Controller extends AbstractController {
 		}
 		category2.setParent(parentComboBox.getValue());
 		category2.setDescription(StringUtils.strip(descriptionField.getText()));
+		category2.setShortDescription(StringUtils.strip(shortDescriptionField.getText()));
 		
 		try {
 			categoryService.save(category2);

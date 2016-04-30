@@ -30,6 +30,11 @@
 					<PropertyValueFactory property="description" />
 				</cellValueFactory>
 			</TableColumn>
+			<TableColumn text="Short Description" styleClass="center">
+				<cellValueFactory>
+					<PropertyValueFactory property="shortDescription" />
+				</cellValueFactory>
+			</TableColumn>
 		</columns>
 	</AppTableView>
 	
