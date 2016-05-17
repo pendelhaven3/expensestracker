@@ -13,7 +13,6 @@ import com.jchs.expensestracker.ControllerFactory;
 import com.jchs.expensestracker.NavigationHistory;
 import com.jchs.expensestracker.NavigationHistoryItem;
 import com.jchs.expensestracker.Parameter;
-import com.jchs.expensestracker.PersistentScene;
 import com.jchs.expensestracker.model.Category1;
 import com.jchs.expensestracker.model.Category2;
 import com.jchs.expensestracker.model.Category3;
@@ -34,7 +33,6 @@ public class StageController {
 	
 	private Stage stage;
 	private NavigationHistory history = new NavigationHistory();
-	private Map<String, SceneAndController> persistentScenes = new HashMap<>();
 	
 	public void setStage(Stage stage) {
 		this.stage = stage;
@@ -45,44 +43,6 @@ public class StageController {
 	}
 	
 	private void loadSceneFromFXML(String file, Map<String, Object> model) {
-		if (persistentScenes.containsKey(file)) {
-			loadPersistentScene(file, model);
-		} else {
-			loadNonPersistentScene(file, model);
-		}
-		saveHistory(file, model);
-	}
-
-	private void loadPersistentScene(String file, Map<String, Object> model) {
-		SceneAndController sceneAndController = persistentScenes.get(file);
-		
-		stage.setScene(sceneAndController.getScene());
-		
-		AbstractController controller = (AbstractController)sceneAndController.getController();
-		mapParameters(controller, model);
-		controller.updateDisplay();
-	}
-
-	private void mapParameters(AbstractController controller, Map<String, Object> model) {
-		if (model == null || model.isEmpty()) {
-			return;
-		}
-		
-		Class<? extends AbstractController> clazz = controller.getClass();
-		for (String key : model.keySet()) {
-			try {
-				Field field = clazz.getDeclaredField(key);
-				if (field != null && field.getAnnotation(Parameter.class) != null) {
-					field.setAccessible(true);
-					field.set(controller, model.get(key));
-				}
-			} catch (Exception e) {
-				System.out.println("Error setting parameter " + key);
-			}
-		}
-	}
-	
-	private void loadNonPersistentScene(String file, Map<String, Object> model) {
 		FXMLLoader fxmlLoader = new FXMLLoader();
 		fxmlLoader.setControllerFactory(controllerFactory);
 		
@@ -105,11 +65,28 @@ public class StageController {
 		mapParameters(controller, model);
 		controller.updateDisplay();
 		
-		if (controller.getClass().getAnnotation(PersistentScene.class) != null) {
-			persistentScenes.put(file, new SceneAndController(stage.getScene(), controller));
-		}
+		saveHistory(file, model);
 	}
 
+	private void mapParameters(AbstractController controller, Map<String, Object> model) {
+		if (model == null || model.isEmpty()) {
+			return;
+		}
+		
+		Class<? extends AbstractController> clazz = controller.getClass();
+		for (String key : model.keySet()) {
+			try {
+				Field field = clazz.getDeclaredField(key);
+				if (field != null && field.getAnnotation(Parameter.class) != null) {
+					field.setAccessible(true);
+					field.set(controller, model.get(key));
+				}
+			} catch (Exception e) {
+				System.out.println("Error setting parameter " + key);
+			}
+		}
+	}
+	
 	private void saveHistory(String sceneName, Map<String, Object> model) {
 		history.add(new NavigationHistoryItem(sceneName, model));
 	}
@@ -128,25 +105,6 @@ public class StageController {
 		stage.setTitle("Expenses Tracker - " + title);
 	}
 
-	private class SceneAndController {
-
-		private Scene scene;
-		private AbstractController controller;
-		
-		public SceneAndController(Scene scene, AbstractController controller) {
-			this.scene = scene;
-			this.controller = controller;
-		}
-		
-		public Scene getScene() {
-			return scene;
-		}
-		
-		public AbstractController getController() {
-			return controller;
-		}
-	}
-	
 	public void showExpensesListScreen() {
 		loadSceneFromFXML("expensesList");
 	}
