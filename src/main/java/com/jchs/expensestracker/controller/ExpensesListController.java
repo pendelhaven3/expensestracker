@@ -176,6 +176,29 @@ public class ExpensesListController extends AbstractController {
 						
 						category3Index++;
 					}
+					
+					Tab category3Tab = new Tab();
+					category3Tab.setText("--------");
+					category3Tab.setClosable(false);
+					category3Tab.getStyleClass().add(CATEGORY_3_COLORS[category3Index % CATEGORY_3_COLORS.length]);
+					category3TabPane.getTabs().add(category3Tab);
+					if (this.category3 == null) {
+						category3TabPane.getSelectionModel().select(category3Tab);
+					}
+					
+					VBox category3VBox = new VBox();
+					category3Tab.setContent(category3VBox);
+					
+					HBox hbox = createExpenseButtonsHBox();
+					category3VBox.getChildren().add(hbox);
+					
+					ExpensesTableView tableView = new ExpensesTableView();
+					tableView.getItems().setAll(filterExpenses(expenses, category1, category2, null));
+					VBox.setVgrow(tableView, Priority.ALWAYS);
+					category3VBox.getChildren().add(tableView);
+					
+					hbox.getChildren().add(createAddExpenseButton(category1, category2, null));
+					hbox.getChildren().add(createDeleteExpenseButton(tableView));
 				}
 				category2Index++;
 			}
@@ -215,7 +238,8 @@ public class ExpensesListController extends AbstractController {
 					return category2.equals(expense.getCategory2());
 				})
 				.filter(expense -> {
-					return category3 == null || category3.equals(expense.getCategory3());
+					return (category3 == null && expense.getCategory3() == null)
+							|| (category3 != null && category3.equals(expense.getCategory3()));
 				})
 				.collect(Collectors.toList());
 	}
