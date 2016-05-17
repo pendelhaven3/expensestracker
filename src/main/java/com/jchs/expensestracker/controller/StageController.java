@@ -174,7 +174,13 @@ public class StageController {
 	}
 	
 	public void showEditExpenseScreen(Expense expense) {
-		loadSceneFromFXML("expense", Collections.singletonMap("expense", expense));
+		Map<String, Object> params = new HashMap<>();
+		params.put("expense", expense);
+		params.put("category1", expense.getCategory1());
+		params.put("category2", expense.getCategory2());
+		params.put("category3", expense.getCategory3());
+		
+		loadSceneFromFXML("expense", params);
 	}
 
 	public void showCategory1ListScreen() {
