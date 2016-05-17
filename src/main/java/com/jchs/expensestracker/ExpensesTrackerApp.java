@@ -58,7 +58,7 @@ public class ExpensesTrackerApp extends Application {
 	private void showInitialScreen() {
 		StageController stageController = context.getBean(StageController.class);
 		stageController.setStage(stage);
-		stageController.showExpensesListScreen();
+		stageController.showMainMenuScreen();
 		stage.setResizable(true);
 		stage.show();
 	}

@@ -231,3 +231,73 @@ AppTableView {
 .workArea {
 	-fx-background-color: #ffffcc;
 }
+
+/* COLORS */
+
+.category1Tab-bgColor1 {
+	-fx-background-color: #0000cc;
+}
+
+.category1Tab-bgColor2 {
+	-fx-background-color: #0099cc;
+}
+
+.category1Tab-bgColor1 .tab-label,
+.category1Tab-bgColor2 .tab-label {
+    -fx-text-fill: white;
+}
+
+.category2Tab-bgColor1 {
+	-fx-background-color: #fc9ee3;
+}
+
+.category2Tab-bgColor2 {
+	-fx-background-color: #66ffcc;
+}
+
+.category2Tab-bgColor3 {
+	-fx-background-color: #386598;
+}
+
+.category2Tab-bgColor4 {
+	-fx-background-color: #215867;
+}
+
+.category2Tab-bgColor5 {
+	-fx-background-color: #cc66ff;
+}
+
+.category2Tab-bgColor6 {
+	-fx-background-color: #fac090;
+}
+
+.category2Tab-bgColor7 {
+	-fx-background-color: #ff3399;
+}
+
+.category2Tab-bgColor8 {
+	-fx-background-color: #d99795;
+}
+
+.category2Tab-bgColor9 {
+	-fx-background-color: #ffff99;
+}
+
+.category3Tab-bgColor1 {
+	-fx-background-color: #953735;
+}
+
+.category3Tab-bgColor2 {
+	-fx-background-color: #6f236b;
+}
+
+.category3Tab-bgColor3 {
+	-fx-background-color: #6600ff;
+}
+
+.category3Tab-bgColor1 .tab-label,
+.category3Tab-bgColor2 .tab-label,
+.category3Tab-bgColor3 .tab-label {
+    -fx-text-fill: white;
+}
+

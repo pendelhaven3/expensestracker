@@ -32,6 +32,10 @@
 					GridPane.columnIndex="0" GridPane.rowIndex="1" />
 				<UppercaseTextField fx:id="descriptionField" prefWidth="400"
 					GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="Short Description"
+					GridPane.columnIndex="0" GridPane.rowIndex="2" />
+				<UppercaseTextField fx:id="shortDescriptionField" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" />
 			</GridPane>
 			
 			<HBox spacing="10" alignment="center">

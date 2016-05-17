@@ -22,6 +22,7 @@ public class Category2 {
 	private Category1 parent;
 
 	private String description;
+	private String shortDescription;
 	
 	@Override
 	public String toString() {
@@ -63,6 +64,14 @@ public class Category2 {
 			return false;
 		Category2 other = (Category2) obj;
 		return new EqualsBuilder().append(id, other.getId()).isEquals();
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 	
 }
