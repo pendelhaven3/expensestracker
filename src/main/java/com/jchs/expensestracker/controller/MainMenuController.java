@@ -36,5 +36,10 @@ public class MainMenuController extends AbstractController {
 	public void goToCategory3ListScreen() {
 		stageController.showCategory3ListScreen();
 	}
+	
+	@FXML
+	public void goToSearchExpensesCriteriaScreen() {
+		stageController.showSearchExpensesCriteriaScreen();
+	}
 
 }

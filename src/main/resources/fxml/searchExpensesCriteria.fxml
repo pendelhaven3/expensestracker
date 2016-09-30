@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import com.jchs.expensestracker.gui.component.AppDatePicker?>
+<?import javafx.scene.control.ComboBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+		fx:controller="com.jchs.expensestracker.controller.SearchExpensesCriteriaController" >
+	<top>
+		<ToolBar>
+			<Button text="Back" onAction="#doOnBack" />
+		</ToolBar>
+	</top>
+	<center>
+		<VBox spacing="20" alignment="center">
+			<GridPane vgap="10" alignment="center">
+				<Label text="From Date" prefWidth="150"
+					GridPane.columnIndex="0" GridPane.rowIndex="0" />
+				<AppDatePicker fx:id="fromDateDatePicker" prefWidth="150"
+					GridPane.columnIndex="1" GridPane.rowIndex="0" />
+				<Label text="To Date" prefWidth="150"
+					GridPane.columnIndex="0" GridPane.rowIndex="1" />
+				<AppDatePicker fx:id="toDateDatePicker" prefWidth="150"
+					GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="Category 1" prefWidth="150"
+					GridPane.columnIndex="0" GridPane.rowIndex="2" />
+				<ComboBox fx:id="category1ComboBox"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<Label text="Category 2" prefWidth="150"
+					GridPane.columnIndex="0" GridPane.rowIndex="3" />
+				<ComboBox fx:id="category2ComboBox"
+					GridPane.columnIndex="1" GridPane.rowIndex="3" />
+				<Label text="Category 3" prefWidth="150"
+					GridPane.columnIndex="0" GridPane.rowIndex="4" />
+				<ComboBox fx:id="category3ComboBox"
+					GridPane.columnIndex="1" GridPane.rowIndex="4" />
+			</GridPane>
+			
+			<HBox spacing="10" alignment="center">
+				<Button text="Search" onAction="#searchExpenses" />
+			</HBox>
+			
+		</VBox>
+	</center>
+</BorderPane>
