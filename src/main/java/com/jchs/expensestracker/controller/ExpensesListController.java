@@ -1,5 +1,6 @@
 package com.jchs.expensestracker.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +14,7 @@ import com.jchs.expensestracker.Parameter;
 import com.jchs.expensestracker.gui.ShowDialog;
 import com.jchs.expensestracker.gui.component.AppPropertyValueFactory;
 import com.jchs.expensestracker.gui.component.AppTableView;
+import com.jchs.expensestracker.gui.component.DateCellFactory;
 import com.jchs.expensestracker.model.Category1;
 import com.jchs.expensestracker.model.Category2;
 import com.jchs.expensestracker.model.Category3;
@@ -20,6 +22,7 @@ import com.jchs.expensestracker.model.Expense;
 import com.jchs.expensestracker.service.CategoryService;
 import com.jchs.expensestracker.service.ExpenseService;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -294,11 +297,14 @@ public class ExpensesListController extends AbstractController {
 		private void initializeColumns() {
 			setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 			
-			TableColumn<Expense, String> dateEnteredColumn = new TableColumn<>("Date Entered");
-			dateEnteredColumn.setCellValueFactory(new AppPropertyValueFactory<>("dateEntered"));
+			TableColumn<Expense, Date> dateEnteredColumn = new TableColumn<>("Date Entered");
+			dateEnteredColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<Date>(param.getValue().getDateEntered()));
+			dateEnteredColumn.setCellFactory(new DateCellFactory<>());		
 			
-			TableColumn<Expense, String> dateOfTransactionColumn = new TableColumn<>("Date of Transaction");
-			dateOfTransactionColumn.setCellValueFactory(new AppPropertyValueFactory<>("dateOfTransaction"));
+			TableColumn<Expense, Date> dateOfTransactionColumn = new TableColumn<>("Date of Transaction");
+			dateOfTransactionColumn.setCellValueFactory(
+					param -> new ReadOnlyObjectWrapper<Date>(param.getValue().getDateOfTransaction()));
+			dateOfTransactionColumn.setCellFactory(new DateCellFactory<>());		
 
 			TableColumn<Expense, String> particularsColumn = new TableColumn<>("Particulars");
 			particularsColumn.setCellValueFactory(new AppPropertyValueFactory<>("particulars"));
