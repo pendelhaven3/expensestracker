@@ -301,3 +301,6 @@ AppTableView {
     -fx-text-fill: white;
 }
 
+.expenseSummary-gridPane {
+	-fx-border-style: solid hidden solid hidden;
+}

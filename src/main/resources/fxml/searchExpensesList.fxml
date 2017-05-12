@@ -10,6 +10,7 @@
 
 	<ToolBar>
 		<Button text="Back" onAction="#doOnBack" />
+		<Button text="Summary" onAction="#goToSearchExpensesSummaryScreen" />
 	</ToolBar>
 		
 	<TabPane VBox.vgrow="always" fx:id="category1TabPane" />

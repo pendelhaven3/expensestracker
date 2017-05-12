@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -188,6 +189,10 @@ public class StageController {
 
 	public void showSearchExpensesListScreen(ExpenseSearchCriteria criteria) {
 		loadSceneFromFXML("searchExpensesList", Collections.singletonMap("criteria", criteria));
+	}
+
+	public void goToSearchExpensesSummaryScreen(List<Expense> expenses) {
+		loadSceneFromFXML("searchExpensesSummary", Collections.singletonMap("expenses", expenses));
 	}
 
 }

@@ -73,6 +73,8 @@ public class SearchExpensesListController extends AbstractController {
 	@Parameter private Category2 category2;
 	@Parameter private Category3 category3;
 	
+	private List<Expense> expenses;
+	
 	@Override
 	public void updateDisplay() {
 		stageController.setTitle("Expenses List");
@@ -80,7 +82,7 @@ public class SearchExpensesListController extends AbstractController {
 	}
 	
 	private void createTabs() {
-		List<Expense> expenses = expenseService.searchExpenses(criteria);
+		expenses = expenseService.searchExpenses(criteria);
 		
 		int category1Index = 0;
 		for (Category1 category1 : categoryService.getAllLevel1Categories()) {
@@ -314,7 +316,11 @@ public class SearchExpensesListController extends AbstractController {
 			getColumns().add(particularsColumn);
 			getColumns().add(amountColumn);
 		}
-		
+	}
+
+	@FXML 
+	public void goToSearchExpensesSummaryScreen() {
+		stageController.goToSearchExpensesSummaryScreen(expenses);
 	}
 	
 	private class AddExpenseButton extends Button {
