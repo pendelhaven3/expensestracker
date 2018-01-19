@@ -61,7 +61,7 @@ public class StageController {
 			stage.setScene(new Scene(root, WIDTH, HEIGHT));
 		}
 		
-		stage.getScene().getStylesheets().add("css/application.css");
+		stage.getScene().getStylesheets().add("css/application2.css");
 		
 		AbstractController controller = (AbstractController)fxmlLoader.getController();
 		mapParameters(controller, model);
@@ -194,5 +194,30 @@ public class StageController {
 	public void goToSearchExpensesSummaryScreen(List<Expense> expenses) {
 		loadSceneFromFXML("searchExpensesSummary", Collections.singletonMap("expenses", expenses));
 	}
+
+    public void showEditExpenseSelectCategory1Screen() {
+        loadSceneFromFXML("editExpenses-selectCategory1");
+    }
+
+    public void showEditExpensesSelectCategory2Screen(Category1 category1) {
+        loadSceneFromFXML("editExpenses-selectCategory2", Collections.singletonMap("category1", category1));
+    }
+
+    public void showEditExpensesSelectCategory3Screen(Category1 category1, Category2 category2) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("category1", category1);
+        params.put("category2", category2);
+        
+        loadSceneFromFXML("editExpenses-selectCategory3", params);
+    }
+
+    public void showEditExpensesSelectScreen(Category1 category1, Category2 category2, Category3 category3) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("category1", category1);
+        params.put("category2", category2);
+        params.put("category3", category3);
+        
+        loadSceneFromFXML("editExpenses-selectExpense", params);
+    }
 
 }

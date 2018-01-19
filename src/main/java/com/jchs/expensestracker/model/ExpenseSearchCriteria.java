@@ -9,6 +9,7 @@ public class ExpenseSearchCriteria {
 	private Category1 category1;
 	private Category2 category2;
 	private Category3 category3;
+    private boolean category3Null;
 
 	public Date getFromDate() {
 		return fromDate;
@@ -49,5 +50,13 @@ public class ExpenseSearchCriteria {
 	public void setCategory3(Category3 category3) {
 		this.category3 = category3;
 	}
+
+    public boolean isCategory3Null() {
+        return category3Null;
+    }
+
+    public void setCategory3Null(boolean category3Null) {
+        this.category3Null = category3Null;
+    }
 
 }

@@ -1,8 +1,6 @@
 package com.jchs.expensestracker.controller;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -107,12 +105,7 @@ public class ExpenseController extends AbstractController {
 
 	@FXML
 	public void doOnBack() {
-		Map<String, Object> params = new HashMap<>();
-		params.put("category1", category1);
-		params.put("category2", category2);
-		params.put("category3", category3);
-
-		stageController.back(params);
+		stageController.back();
 	}
 	
 	@FXML

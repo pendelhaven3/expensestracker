@@ -20,7 +20,7 @@ public class AppTableView<T> extends TableView<T> {
 		setItems(items);
 		
 		if (!items.isEmpty()) {
-			getSelectionModel().select(0);
+			getSelectionModel().selectFirst();
 		}
 		requestFocus();
 	}

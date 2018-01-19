@@ -20,5 +20,5 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long>, JpaSpec
 	List<Expense> findAll();
 
 	List<Expense> findByCategory3(Category3 category3);
-	
+
 }

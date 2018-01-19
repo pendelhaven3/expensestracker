@@ -42,4 +42,9 @@ public class MainMenuController extends AbstractController {
 		stageController.showSearchExpensesCriteriaScreen();
 	}
 
+    @FXML
+    public void goToExpensesList3Screen() {
+        stageController.showEditExpenseSelectCategory1Screen();
+    }
+
 }
