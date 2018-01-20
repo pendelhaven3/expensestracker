@@ -58,9 +58,17 @@ public class EditExpensesSelectExpenseController extends AbstractController {
         
         Button category3ToolBarButton = new Button(category3.getDescription());
         toolBar.getItems().add(category3ToolBarButton);
+        
+        Button addToolBarButton = new Button("Add");
+        addToolBarButton.setOnMouseClicked(e -> addExpense());
+        toolBar.getItems().add(addToolBarButton);
 	}
 
-	private List<Expense> getExpenses() {
+	private void addExpense() {
+        stageController.showAddExpenseScreen(category1, category2, category3);
+    }
+
+    private List<Expense> getExpenses() {
         ExpenseSearchCriteria criteria = new ExpenseSearchCriteria();
         criteria.setCategory1(category1);
         criteria.setCategory2(category2);
