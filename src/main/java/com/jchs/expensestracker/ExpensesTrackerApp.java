@@ -1,22 +1,22 @@
 package com.jchs.expensestracker;
 
+import java.awt.SplashScreen;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ImportResource;
 
 import com.jchs.expensestracker.controller.StageController;
 import com.jchs.expensestracker.gui.ShowDialog;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 @SpringBootApplication
-@ImportResource("classpath:applicationContext.xml")
 public class ExpensesTrackerApp extends Application {
 
 	private static String[] args;
@@ -34,7 +34,7 @@ public class ExpensesTrackerApp extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.stage = stage;
-		context = SpringApplication.run(ExpensesTrackerApp.class, ExpensesTrackerApp.args);
+		context = new SpringApplicationBuilder(ExpensesTrackerApp.class).headless(false).run(ExpensesTrackerApp.args);
 		
 		if (isDatabaseNotFound()) {
 			ShowDialog.error("Database not found");
@@ -60,6 +60,13 @@ public class ExpensesTrackerApp extends Application {
 		stageController.setStage(stage);
 		stageController.showMainMenuScreen();
 		stage.setResizable(true);
+        stage.getIcons().add(new Image(ExpensesTrackerApp.class.getClassLoader().getResourceAsStream("images/icon.png")));
+        
+        final SplashScreen splash = SplashScreen.getSplashScreen();
+        if (splash != null) {
+            splash.close();
+        }
+        
 		stage.show();
 	}
 
