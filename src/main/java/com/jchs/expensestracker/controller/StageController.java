@@ -220,4 +220,8 @@ public class StageController {
         loadSceneFromFXML("editExpenses-selectExpense", params);
     }
 
+    public Stage getStage() {
+		return stage;
+	}
+    
 }

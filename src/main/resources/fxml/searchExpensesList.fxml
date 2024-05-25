@@ -17,6 +17,7 @@
 	<top>
 		<ToolBar>
 			<Button text="Back" onAction="#doOnBack" />
+			<Button text="Generate Excel" onAction="#generateExcel" />
 		</ToolBar>
 	</top>
 	<center>
