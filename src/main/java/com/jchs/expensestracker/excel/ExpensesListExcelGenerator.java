@@ -82,9 +82,7 @@ public class ExpensesListExcelGenerator {
             cell.setCellValue(expense.getAmount().doubleValue());
 
             cell = row.createCell(5);
-            cell.setCellValue(expense.getCategory1().getDescription() + 
-            		" - " + expense.getCategory2().getDescription() + 
-            		" - " + expense.getCategory3().getDescription());
+            cell.setCellValue(expense.getCategory2().getDescription());
         	
         	rowNum++;
         }
