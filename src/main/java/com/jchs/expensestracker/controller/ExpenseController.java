@@ -41,6 +41,9 @@ public class ExpenseController extends AbstractController {
 	@FXML private ComboBox<Category3> category3ComboBox;
 	@FXML private DatePicker dateOfTransactionDatePicker;
 	@FXML private TextField particularsField;
+	@FXML private TextField tinField;
+	@FXML private TextField supplierField;
+	@FXML private TextField addressField;
 	@FXML private TextField amountField;
 	@FXML private Button deleteButton;
 	
@@ -63,6 +66,9 @@ public class ExpenseController extends AbstractController {
 			category3ComboBox.setValue(expense.getCategory3());
 			dateOfTransactionDatePicker.setValue(DateUtil.toLocalDate(expense.getDateOfTransaction()));
 			particularsField.setText(expense.getParticulars());
+			tinField.setText(expense.getTin());
+			supplierField.setText(expense.getSupplier());
+			addressField.setText(expense.getAddress());
 			amountField.setText(FormatterUtil.formatAmount(expense.getAmount()));
 			deleteButton.setDisable(false);
 			
@@ -122,6 +128,9 @@ public class ExpenseController extends AbstractController {
 		expense.setCategory3(category3ComboBox.getValue());
 		expense.setDateOfTransaction(DateUtil.toDate(dateOfTransactionDatePicker.getValue()));
 		expense.setParticulars(StringUtils.strip(particularsField.getText()));
+		expense.setTin(StringUtils.strip(tinField.getText()));
+		expense.setSupplier(StringUtils.strip(supplierField.getText()));
+		expense.setAddress(StringUtils.strip(addressField.getText()));
 		expense.setAmount(NumberUtil.toBigDecimal(StringUtils.strip(amountField.getText())));
 		expense.setDateEntered(new Date());
 		

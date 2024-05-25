@@ -104,7 +104,7 @@ public class StageController {
 	}
 
 	public void setTitle(String title) {
-		stage.setTitle("Expenses Tracker - " + title);
+		stage.setTitle("Expenses Tracker - 1.4.2 - " + title);
 	}
 
 	public void showExpensesListScreen() {

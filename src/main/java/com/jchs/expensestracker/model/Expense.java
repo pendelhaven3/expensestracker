@@ -31,6 +31,9 @@ public class Expense {
 	private Date dateOfTransaction;
 
 	private String particulars;
+	private String tin;
+	private String supplier;
+	private String address;
 	private BigDecimal amount;
 
 	public Long getId() {
@@ -87,6 +90,30 @@ public class Expense {
 
 	public void setParticulars(String particulars) {
 		this.particulars = particulars;
+	}
+
+	public String getTin() {
+		return tin;
+	}
+
+	public void setTin(String tin) {
+		this.tin = tin;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public BigDecimal getAmount() {

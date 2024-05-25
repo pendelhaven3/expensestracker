@@ -44,10 +44,22 @@
 					GridPane.columnIndex="0" GridPane.rowIndex="4" />
 				<UppercaseTextField fx:id="particularsField" prefWidth="400"
 					GridPane.columnIndex="1" GridPane.rowIndex="4" />
-				<Label text="Amount"
+				<Label text="TIN ID"
 					GridPane.columnIndex="0" GridPane.rowIndex="5" />
-				<UppercaseTextField fx:id="amountField" prefWidth="100"
+				<UppercaseTextField fx:id="tinField" prefWidth="400"
 					GridPane.columnIndex="1" GridPane.rowIndex="5" />
+				<Label text="Supplier"
+					GridPane.columnIndex="0" GridPane.rowIndex="6" />
+				<UppercaseTextField fx:id="supplierField" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="6" />
+				<Label text="Address"
+					GridPane.columnIndex="0" GridPane.rowIndex="7" />
+				<UppercaseTextField fx:id="addressField" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="7" />
+				<Label text="Amount"
+					GridPane.columnIndex="0" GridPane.rowIndex="8" />
+				<UppercaseTextField fx:id="amountField" prefWidth="100"
+					GridPane.columnIndex="1" GridPane.rowIndex="8" />
 			</GridPane>
 			
 			<HBox spacing="10" alignment="center">

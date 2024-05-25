@@ -43,6 +43,21 @@
 						<PropertyValueFactory property="particulars" />
 					</cellValueFactory>
 				</TableColumn>
+				<TableColumn text="TIN ID">
+					<cellValueFactory>
+						<PropertyValueFactory property="tin" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Supplier">
+					<cellValueFactory>
+						<PropertyValueFactory property="supplier" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="address" />
+					</cellValueFactory>
+				</TableColumn>
 				<TableColumn text="Amount" styleClass="right">
 					<cellValueFactory>
 						<PropertyValueFactory property="amount" />
