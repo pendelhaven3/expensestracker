@@ -73,7 +73,19 @@ public class ExpenseServiceImpl implements ExpenseService {
 			specifications = specifications.and(withDateOfTransactionLessThanOrEqual(criteria.getToDate()));
 		}
 		
-		return expenseRepository.findAll(specifications, new Sort(Direction.DESC, "dateOfTransaction"));
+		Sort sort = new Sort(Direction.DESC, "dateOfTransaction");
+		if (criteria.isReport()) {
+			sort = new Sort(
+					"dateOfTransaction",
+					"category1.description",
+					"category2.description",
+					"category3.description",
+					"particulars",
+					"supplier"
+			);
+		}
+		
+		return expenseRepository.findAll(specifications, sort);
 	}
 	
 }
