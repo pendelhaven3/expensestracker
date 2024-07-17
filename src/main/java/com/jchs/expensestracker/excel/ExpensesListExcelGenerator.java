@@ -60,21 +60,25 @@ public class ExpensesListExcelGenerator {
 
         cell = row.createCell(1);
         cell.setCellStyle(headerStyle);
-        cell.setCellValue("TIN ID");
+        cell.setCellValue("PARTICULARS");
 
         cell = row.createCell(2);
         cell.setCellStyle(headerStyle);
-        cell.setCellValue("SUPPLIER");
+        cell.setCellValue("TIN ID");
 
         cell = row.createCell(3);
         cell.setCellStyle(headerStyle);
-        cell.setCellValue("ADDRESS");
+        cell.setCellValue("SUPPLIER");
 
         cell = row.createCell(4);
         cell.setCellStyle(headerStyle);
-        cell.setCellValue("AMOUNT");
+        cell.setCellValue("ADDRESS");
 
         cell = row.createCell(5);
+        cell.setCellStyle(headerStyle);
+        cell.setCellValue("AMOUNT");
+
+        cell = row.createCell(6);
         cell.setCellStyle(headerStyle);
         cell.setCellValue("EXPENSE TITLE");
         
@@ -99,19 +103,22 @@ public class ExpensesListExcelGenerator {
                 cell.setCellValue(expense.getDateOfTransaction());
 
                 cell = row.createCell(1);
-                cell.setCellValue(expense.getTin());
+                cell.setCellValue(expense.getParticulars());
 
                 cell = row.createCell(2);
-                cell.setCellValue(expense.getSupplier());
+                cell.setCellValue(expense.getTin());
 
                 cell = row.createCell(3);
-                cell.setCellValue(expense.getAddress());
+                cell.setCellValue(expense.getSupplier());
 
                 cell = row.createCell(4);
+                cell.setCellValue(expense.getAddress());
+
+                cell = row.createCell(5);
                 cell.setCellStyle(numberStyle);
                 cell.setCellValue(expense.getAmount().doubleValue());
 
-                cell = row.createCell(5);
+                cell = row.createCell(6);
                 cell.setCellValue(expense.getCategory2().getDescription());
             	
             	rowNum++;
@@ -127,6 +134,7 @@ public class ExpensesListExcelGenerator {
         sheet.autoSizeColumn(3);
         sheet.autoSizeColumn(4);
         sheet.autoSizeColumn(5);
+        sheet.autoSizeColumn(6);
         
         return workbook;
     }
