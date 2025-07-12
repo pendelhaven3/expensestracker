@@ -60,6 +60,14 @@
 					GridPane.columnIndex="0" GridPane.rowIndex="8" />
 				<UppercaseTextField fx:id="amountField" prefWidth="100"
 					GridPane.columnIndex="1" GridPane.rowIndex="8" />
+				<Label text="Sales Invoice Number"
+					GridPane.columnIndex="0" GridPane.rowIndex="9" />
+				<UppercaseTextField fx:id="salesInvoiceNumberField" prefWidth="100"
+					GridPane.columnIndex="1" GridPane.rowIndex="9" />
+				<Label text="Type of Receipt" prefWidth="200"
+					GridPane.columnIndex="0" GridPane.rowIndex="10" />
+				<ComboBox fx:id="typeOfReceiptComboBox" prefWidth="400"
+					GridPane.columnIndex="1" GridPane.rowIndex="10" />
 			</GridPane>
 			
 			<HBox spacing="10" alignment="center">

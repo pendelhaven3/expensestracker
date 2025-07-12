@@ -15,6 +15,7 @@ import com.jchs.expensestracker.model.Category1;
 import com.jchs.expensestracker.model.Category2;
 import com.jchs.expensestracker.model.Category3;
 import com.jchs.expensestracker.model.Expense;
+import com.jchs.expensestracker.model.TypeOfReceipt;
 import com.jchs.expensestracker.service.CategoryService;
 import com.jchs.expensestracker.service.ExpenseService;
 import com.jchs.expensestracker.util.DateUtil;
@@ -45,6 +46,8 @@ public class ExpenseController extends AbstractController {
 	@FXML private TextField supplierField;
 	@FXML private TextField addressField;
 	@FXML private TextField amountField;
+	@FXML private TextField salesInvoiceNumberField;
+	@FXML private ComboBox<String> typeOfReceiptComboBox;
 	@FXML private Button deleteButton;
 	
 	@Parameter private Expense expense;
@@ -58,6 +61,7 @@ public class ExpenseController extends AbstractController {
 		category1ComboBox.getItems().setAll(categoryService.getAllLevel1Categories());
 		updateCategory2ComboBoxWhenCategory1ComboBoxChanges();
 		updateCategory3ComboBoxWhenCategory2ComboBoxChanges();
+		typeOfReceiptComboBox.getItems().setAll(TypeOfReceipt.getValues());
 		
 		if (expense != null) {
 			expense = expenseService.getExpense(expense.getId());
@@ -70,6 +74,8 @@ public class ExpenseController extends AbstractController {
 			supplierField.setText(expense.getSupplier());
 			addressField.setText(expense.getAddress());
 			amountField.setText(FormatterUtil.formatAmount(expense.getAmount()));
+			salesInvoiceNumberField.setText(expense.getSalesInvoiceNumber());
+			typeOfReceiptComboBox.setValue(expense.getTypeOfReceipt());
 			deleteButton.setDisable(false);
 			
 			category1ComboBox.requestFocus();
@@ -132,6 +138,8 @@ public class ExpenseController extends AbstractController {
 		expense.setSupplier(StringUtils.strip(supplierField.getText()));
 		expense.setAddress(StringUtils.strip(addressField.getText()));
 		expense.setAmount(NumberUtil.toBigDecimal(StringUtils.strip(amountField.getText())));
+		expense.setSalesInvoiceNumber(StringUtils.strip(salesInvoiceNumberField.getText()));
+		expense.setTypeOfReceipt(typeOfReceiptComboBox.getValue());
 		expense.setDateEntered(new Date());
 		
 		try {

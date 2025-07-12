@@ -35,6 +35,8 @@ public class Expense {
 	private String supplier;
 	private String address;
 	private BigDecimal amount;
+	private String salesInvoiceNumber;
+	private String typeOfReceipt;
 
 	public Long getId() {
 		return id;
@@ -124,4 +126,20 @@ public class Expense {
 		this.amount = amount;
 	}
 
+	public String getSalesInvoiceNumber() {
+		return salesInvoiceNumber;
+	}
+
+	public void setSalesInvoiceNumber(String salesInvoiceNumber) {
+		this.salesInvoiceNumber = salesInvoiceNumber;
+	}
+
+	public String getTypeOfReceipt() {
+		return typeOfReceipt;
+	}
+
+	public void setTypeOfReceipt(String typeOfReceipt) {
+		this.typeOfReceipt = typeOfReceipt;
+	}
+	
 }
