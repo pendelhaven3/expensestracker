@@ -66,6 +66,16 @@
 						<AmountCellFactory />
 					</cellFactory>
 				</TableColumn>
+				<TableColumn text="Sales Invoice Number">
+					<cellValueFactory>
+						<PropertyValueFactory property="salesInvoiceNumber" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Type of Receipt">
+					<cellValueFactory>
+						<PropertyValueFactory property="typeOfReceipt" />
+					</cellValueFactory>
+				</TableColumn>
 			</columns>
 		</AppTableView>
 	</center>
