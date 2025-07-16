@@ -16,10 +16,11 @@ public class TypeOfReceipt {
 				"Generic Receipt",
 				"Non-Vat Invoice",
 				"Official Receipt",
+				"Provisional Receipt",
 				"Sales Invoice",
-				"Vat Invoice",
+				"Service Invoice",
 				"Order Slip",
-				"Provisional Receipt"
+				"Vat Invoice"
 		);
 	}
 	
