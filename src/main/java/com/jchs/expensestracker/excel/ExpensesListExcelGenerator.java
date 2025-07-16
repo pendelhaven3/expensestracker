@@ -82,6 +82,14 @@ public class ExpensesListExcelGenerator {
         cell.setCellStyle(headerStyle);
         cell.setCellValue("EXPENSE TITLE");
         
+        cell = row.createCell(7);
+        cell.setCellStyle(headerStyle);
+        cell.setCellValue("SALES INVOICE NUMBER");
+        
+        cell = row.createCell(8);
+        cell.setCellStyle(headerStyle);
+        cell.setCellValue("TYPE OF RECEIPT");
+        
         int rowNum = 4;
         
         for (Category3 category3 : category3List) {
@@ -121,6 +129,12 @@ public class ExpensesListExcelGenerator {
                 cell = row.createCell(6);
                 cell.setCellValue(expense.getCategory2().getDescription());
             	
+                cell = row.createCell(7);
+                cell.setCellValue(expense.getSalesInvoiceNumber());
+
+                cell = row.createCell(8);
+                cell.setCellValue(expense.getTypeOfReceipt());
+
             	rowNum++;
             }
         	
@@ -135,6 +149,8 @@ public class ExpensesListExcelGenerator {
         sheet.autoSizeColumn(4);
         sheet.autoSizeColumn(5);
         sheet.autoSizeColumn(6);
+        sheet.autoSizeColumn(7);
+        sheet.autoSizeColumn(8);
         
         return workbook;
     }
